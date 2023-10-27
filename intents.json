@@ -1,0 +1,97 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi",
+          "Hey",
+          "How are you",
+          "Is anyone there?",
+          "Hello",
+          "Good day"
+        ],
+        "responses": [
+          "Hey :-)",
+          "Hello, thanks for visiting",
+          "Hi there, what can I do for you?",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye"],
+        "responses": [
+          "See you later, thanks for visiting",
+          "Have a nice day",
+          "Bye! Come back again soon."
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+        "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      },
+      {
+        "tag": "transformers",
+        "patterns": [
+          "What are the Steps to carry out a transformer insulation resistance test",
+          "Tell me about transformer insulation resistance test"
+        ],
+        "responses": [
+          "1. Disconnect the transformer from the power supply and ground it. \n2. Set the insulation resistance tester to the appropriate voltage range. \n3. Connect the tester to the transformer terminals. \n4. Apply the test voltage for 60 seconds. \n5. Record the insulation resistance value. \n6. Repeat steps 3-5 for each transformer terminal."
+        ]
+      },
+      {
+        "tag": "Probable values/acceptable limits",
+        "patterns": [
+          "What are the probable values",
+          "What are the acceptable limits",
+          "Tell me about Probable values/acceptable limits"
+        ],
+        "responses": [
+          "The insulation resistance value for transformers should be greater than 10 megohms. If the insulation resistance value is less than 10 megohms, the transformer may have an insulation problem."
+        ]
+      },
+      {
+        "tag": "Industrial standards and safety guidelines",
+        "patterns": [
+          "What are the industrial standards",
+          "What are the Industrial standards and safety guidelines should be followed when carrying out transformer insulation resistance tests "
+        ],
+        "responses": [
+          "IEEE Std 153-2019 - Guide for the Insulation Maintenance of Electric Machinery \nIEEE Std 387-2019 - Standard Test Procedure for Excitation Systems for Synchronous Machines \nNETA T&D Manual - Chapter 20 - Transformers"
+        ]
+      },
+      {
+        "tag": "Test equipment",
+        "patterns": [
+          "Give me the list of test equipments",
+          "What are the safety guidelines",
+          "What are the Industrial standards and safety guidelines should be followed when carrying out transformer insulation resistance tests "
+        ],
+        "responses": [
+          "IEEE Std 153-2019 - Guide for the Insulation Maintenance of Electric Machinery \nIEEE Std 387-2019 - Standard Test Procedure for Excitation Systems for Synchronous Machines \nNETA T&D Manual - Chapter 20 - Transformers"
+        ]
+      },
+      {
+        "tag": "Safety guidelines",
+        "patterns": [
+          "Safety guidelines",
+          "What are the safety guidelines"
+        ],
+        "responses": [
+          "1. Always disconnect the transformer from the power supply and ground it before carrying out any maintenance work. \n2. Wear high voltage gloves and safety glasses when working with high voltage equipment. \n3. Be aware of the risks associated with working with high voltage equipment and take all necessary safety precautions."
+        ]
+      },
+      {
+        "tag": "Test transformer",
+        "patterns": [
+          "Best way to test transformer",
+          "which is the best way to test a transformer"
+        ],
+        "responses": [
+          "The best way to test a transformer is to carry out an insulation resistance test. This test measures the resistance of the transformer's insulation to ground. A high insulation resistance value indicates that the transformer's insulation is in good condition. A low insulation resistance value may indicate that the transformer's insulation is damaged."
+        ]
+      }
+    ]
+  }
