@@ -33,10 +33,7 @@ jobs:
               pip install torchvision==0.13.0
               pip install nltk==3.7
               
-      - name: Build the app
-        run: python train.py
-              python train.py
-              python app.py
+
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       - name: Zip artifact for deployment
@@ -65,6 +62,11 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
+        
+      - name: Build the app
+        run: python train.py
+              python train.py
+              python app.py
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
