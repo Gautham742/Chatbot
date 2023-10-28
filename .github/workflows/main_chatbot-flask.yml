@@ -59,7 +59,7 @@ jobs:
         run: unzip release.zip
         
       - name: Build the app
-        run: pip install numpy==1.26.3
+        run: pip install numpy==1.23.2
               python nltk_utils.py
               python train.py
               python chat.py
