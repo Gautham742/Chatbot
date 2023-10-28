@@ -59,8 +59,9 @@ jobs:
         run: unzip release.zip
         
       - name: Build the app
-        run: python train.py
+        run: python nltk_utils.py
               python train.py
+              python chat.py
               python app.py
 
       - name: 'Deploy to Azure Web App'
