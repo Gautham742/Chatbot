@@ -63,7 +63,7 @@ jobs:
         run: unzip release.zip
         
       - name: Build the app
-        run: 
+        run: pip install flask
               python app.py
 
       - name: 'Deploy to Azure Web App'
