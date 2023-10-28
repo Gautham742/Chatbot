@@ -22,7 +22,6 @@ jobs:
         with:
           python-version: '3.10'
 
-
       - name: Create and start virtual environment
         run: |
           python -m venv venv
@@ -62,30 +61,15 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
+        
+      - name: Build the app
+        run: 
+              python app.py
 
-                
-
-      - uses: actions/download-artifact@v2
-        with:
-          name: python-app
-          path: .
-
-      - name: Log in to Azure CLI
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
-
-      - name: Configure deployment and runtime settings on the webapp
-        run: |
-            az configure --defaults ${{ env.RESOURCE_GROUP }}
-            az webapp config appsettings --name ${{ env.WEBAPP_NAME }} --settings \
-            SCM_DO_BUILD_DURING_DEPLOYMENT=true \
-            FLASK_ENV=production
-
-            az webapp config set --name ${{ env.WEBAPP_NAME }} \
-            --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"
-
-      - name: Deploy to App Service
+      - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
+        id: deploy-to-webapp
         with:
-              app-name: ${{ env.WEBAPP_NAME}}
+          app-name: 'chatbot-flask'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BFF756007255483FAD29DBD2277AA76B }}
