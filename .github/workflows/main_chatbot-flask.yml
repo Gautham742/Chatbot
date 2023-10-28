@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v1
         with:
-          python-version: '3.10'
+          python-version: '3.8'
 
       - name: Create and start virtual environment
         run: |
@@ -28,14 +28,7 @@ jobs:
           source venv/bin/activate
 
       - name: Install dependencies
-        run: pip install flask
-              pip install torch==1.12.0
-              pip install torchvision==0.13.0
-              pip install nltk==3.7
-              pip install numpy==1.22.0
-
-              
-
+        run: pip install -r requirements.txt
 
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       - name: Zip artifact for deployment
@@ -64,11 +57,6 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-        
-      - name: Build the app
-        run: python train.py
-              python train.py
-              python app.py
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -76,4 +64,4 @@ jobs:
         with:
           app-name: 'chatbot-flask'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BFF756007255483FAD29DBD2277AA76B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2C01C67AFEEE4743B7F7D7A15B55F23A }}
